@@ -6,21 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="https://static.thenounproject.com/png/3294472-200.png">
+    <link rel="stylesheet" type="text/css" href="css/curriculo.css">
     <title>Currículo Danilo Farias</title>
-    <style>
-        body {
-            margin-left: 8vw;
-            margin-right: 8vw;
-        }
-    </style>
 </head>
 
 <body>
-    <div id="apresentacao">
-        <center>
-            <h1>Danilo Farias Soares da Silva</h1>
-            <img src="/Aulas HTML/img/Danilo.png" alt="Danilo" width="180" height="180">
-        </center>
+    <div id="apresentacao" class="centro">
+
+        <h1>Danilo Farias Soares da Silva</h1>
+        <img src="/Aulas HTML/img/Danilo.png" alt="Danilo" width="180" height="180">
+
         <hr>
     </div>
     <div id="dadosPessoais">
@@ -39,7 +34,7 @@
     </div>
     <div id="sobre">
         <h2>Sobre:</h2>
-        <p>
+        <p id="textSobre">
             Graduado em Tecnologia em Análise e Desenvolvimento de Sistemas pelo Instituto Federal de Educação, Ciência
             e Tecnologia de Pernambuco (IFPE), é Mestre em Ciência da Computação pelo Centro de Informática da
             Universidade Federal de Pernambuco (UFPE), possui especialização em Informática em Saúde pela Universidade
@@ -54,8 +49,8 @@
     </div>
     <div id="formacaoAcad">
         <h2>Formação Acadêmica:</h2>
-        <center>
-            <table>
+        <div class="elementoCentro">
+            <table id="corAzul">
                 <tr>
                     <th>Curso</th>
                     <th>Instituição</th>
@@ -77,12 +72,12 @@
                     <td>2016 a 2018</td>
                 </tr>
             </table>
-        </center>
+        </div>
         <hr>
     </div>
     <div id="formacaoComp">
         <h2>Formação Complementar:</h2>
-        <ol>
+        <ol id="corAzul">
             <li>Formação Acelerada de Programadores: Back-End - Softex Recife</li>
             <li>Curso de JAVA Básico - Curso em Vídeo</li>
             <li>Curso de Python Básico - Curso em Vídeo</li>
@@ -101,7 +96,7 @@
         <hr>
     </div>
     <div id="mapaEnd">
-        <address>
+        <address style="background-color: #495579">
             Desenvolvido:<a href="danilofsilva@fac.pe.senac.br">Prof. Danilo Farias SENAC</a>.<br>
             Rua Dom Bosco, 1000<br> Recife, PE – Brasil
         </address>

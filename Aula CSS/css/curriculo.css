@@ -1,0 +1,55 @@
+body {
+    margin-left: 8vw;
+    margin-right: 8vw;
+    background: linear-gradient(#FFFFFF, #FFFBEB);
+    background-image: url("../img/17580.jpg");
+    background-repeat: round;
+}
+
+* {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #251749;
+}
+
+#textSobre {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 15px;
+}
+
+h1,
+h2 {
+    color: #495579;
+}
+
+#corAzul {
+    background-color: #495579;
+}
+
+#formacaoComp {
+    text-align: center;
+}
+
+.centro {
+    text-align: center;
+}
+
+.elementoCentro {
+    display: flex;
+    justify-content: center;
+}
+
+a:link {
+    color: #FF0000;
+}
+
+a:visited {
+    color: #00FF00;
+}
+
+a:hover {
+    color: #FF00FF;
+}
+
+a:active {
+    color: #0000FF;
+}
