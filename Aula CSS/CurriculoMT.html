@@ -6,35 +6,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="https://static.thenounproject.com/png/3294472-200.png">
-    <link rel="stylesheet" type="text/css" href="css/curriculo.css">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="css/materialize.min.css">
+    <link rel="stylesheet" href="css/curriculoMT.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>Currículo Danilo Farias</title>
 </head>
 
-<body>
-    <div id="apresentacao" class="centro">
-
-        <h1>Danilo Farias Soares da Silva</h1>
+<body class="container">
+    <div id="apresentacao" class="center">
+        <h1 id="titulo">Danilo Farias Soares da Silva</h1>
         <img src="/Aulas HTML/img/Danilo.png" alt="Danilo" width="180" height="180">
-
         <hr>
     </div>
     <div id="dadosPessoais">
-        <h2>Dados Pessoais:</h2>
-        <ul>
+        <h2 id="subtitulo">Dados Pessoais:</h2>
+        <ul class="container">
             <li><b>Email:</b> dansoaresfarias@gmail.com</li>
             <li><b>Telefone:</b> (81) 981905671</li>
             <li><b>Endereco:</b> Rua Dom Bosco, Boa Vista, Recife-PE</li>
-            <div>
+            <div class="center">
                 <br>
-                <a href="https://www.linkedin.com/in/dansoaresfarias/" target="_blank"><b>Linkedin</b></a> |
-                <a href="https://github.com/dansoaresfarias" target="_blank"><b>Github</b></a>
+                <a class="waves-effect waves-light btn-small" href="https://www.linkedin.com/in/dansoaresfarias/"
+                    target="_blank"><b><i class="material-icons left"><img src="img/icons8-linkedin-2.svg"/></i>Linkedin</b></a> |
+                <a class="waves-effect waves-light btn-small" href="https://github.com/dansoaresfarias"
+                    target="_blank"><b><i class="material-icons left"><img src="img/icons8-github.svg"/></i>Github</b></a>
             </div>
         </ul>
         <hr>
     </div>
     <div id="sobre">
         <h2>Sobre:</h2>
-        <p id="textSobre">
+        <p>
             Graduado em Tecnologia em Análise e Desenvolvimento de Sistemas pelo Instituto Federal de Educação, Ciência
             e Tecnologia de Pernambuco (IFPE), é Mestre em Ciência da Computação pelo Centro de Informática da
             Universidade Federal de Pernambuco (UFPE), possui especialização em Informática em Saúde pela Universidade
@@ -49,7 +52,7 @@
     </div>
     <div id="formacaoAcad">
         <h2>Formação Acadêmica:</h2>
-        <div class="elementoCentro">
+        <div>
             <table id="tabela">
                 <tr>
                     <th>Curso</th>
@@ -101,7 +104,8 @@
             Rua Dom Bosco, 1000<br> Recife, PE – Brasil
         </address>
     </div>
-
+    <!-- Compiled and minified JavaScript -->
+    <script src="js/materialize.min.js"></script>
 </body>
 
 </html>
