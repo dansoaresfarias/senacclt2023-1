@@ -9,7 +9,8 @@ public class Principal {
 		// System.out.println("Olá mundo!");
 		Endereco endAna; // Variável do tipo Endereco
 		endAna = new Endereco(); // Criando um objeto do tipo Endereco
-		System.out.println(endAna.toString());
+		endAna.setCidade("Recife");
+		System.out.println(endAna.getCidade());
 	}
 
 }
