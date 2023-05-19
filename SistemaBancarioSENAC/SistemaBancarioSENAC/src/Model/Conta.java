@@ -11,9 +11,10 @@ public class Conta {
 	private Agencia ag;
 	private Date dataCriacao;
 	private double saldo;
+	//Cheque Especial
 	private double limite;
 	private boolean status;
-	private List<Transacao> tranasacoes;
+	private List<Transacao> transacoes;
 
 	public Conta() {
 		// TODO Auto-generated constructor stub
@@ -30,22 +31,55 @@ public class Conta {
 		//Cheque Especial (porrrrraaaaa)
 		this.limite = limite;
 		this.status = true;
-		this.tranasacoes = new ArrayList<Transacao>();
+		this.transacoes = new ArrayList<Transacao>();
 	}
 	
 	public boolean sacar(double valor) {
-		boolean retorno;
-		if((this.saldo + this.limite) >= valor){
+		if((this.saldo + this.limite) >= valor && valor > 0){
 			this.saldo -= valor;
-			Transacao trans = new Transacao(TipoTransacao.Débito, new Date(), valor, this.cliente, '-');
-			this.tranasacoes.add(trans);
-			retorno = true;
+			Transacao trans = new Transacao(TipoTransacao.Débito, new Date(), valor, null, '-');
+			this.transacoes.add(trans);
+			return true;
 		}else {
-			retorno = false;
+			return false;
 		}
-		return retorno;
 	}
 	
+	public boolean depositar(double valor) {
+		if(valor > 0) {
+			this.saldo += valor;
+			Transacao trans = new Transacao(TipoTransacao.Depósito, new Date(), valor, null, '+');
+			this.transacoes.add(trans);
+			return true;
+		}else {
+			return false;
+		}
+	}
+	
+	public boolean transferir(double valor, Conta contaDestino) {
+		if((this.saldo + this.limite) >= valor && valor > 0 && contaDestino != null) {
+			this.saldo -= valor;
+			Transacao trans = new Transacao(TipoTransacao.Transferência, new Date(), valor, contaDestino.getCliente(), '-');
+			this.transacoes.add(trans);
+			
+			contaDestino.saldo += valor;
+			Transacao transDestino = new Transacao(TipoTransacao.Transferência, new Date(), valor, this.cliente, '+');
+			contaDestino.transacoes.add(transDestino);
+			return true;
+		}else {
+			return false;
+		}
+	}
+	
+	public String emitirExtrato() {
+		String extrato = "Extrato da Conta\n";
+		extrato += this.toString() + '\n';
+		for (Transacao t : this.transacoes) {
+			extrato += t.toString() + '\n';
+		}
+		extrato += "Saldo em conta: R$: " + this.saldo;
+		return extrato;
+	}
 
 	public Agencia getAg() {
 		return ag;
@@ -88,7 +122,14 @@ public class Conta {
 	}
 
 	public List<Transacao> getTranasacoes() {
-		return tranasacoes;
+		return transacoes;
+	}
+	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return "Número da Conta: " + this.numero + "| Agência: " + this.ag.getNumero() + "\n" +
+				"Cliente: " + this.cliente.getNome() + "| CPF: " + this.cliente.getCpf();
 	}
 
 }

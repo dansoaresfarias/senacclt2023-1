@@ -78,7 +78,8 @@ public class Cliente {
 
 	@Override
 	public String toString() {
-		return " Cliente: " + nome +  ", CPF: " + cpf + ",  dataNasc=" + dataNasc + "\n RG: " + rg + ", E-mail: " + email
+		return " Cliente: " + nome +  ", CPF: " + cpf + ",  dataNasc=" + dataNasc
+				+ "\n RG: " + rg + ", E-mail: " + email
 				+ ", Telefone: " + telefone + "\n " + endereco;
 	}	
 
