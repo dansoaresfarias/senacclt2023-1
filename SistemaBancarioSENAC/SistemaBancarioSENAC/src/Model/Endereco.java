@@ -9,6 +9,21 @@ public class Endereco {
 	private String complemento;
 	private String cep;
 
+	public Endereco() {
+		super();
+	}
+
+	public Endereco(String uf, String cidade, String bairro, String rua, int numero, String complemento, String cep) {
+		super();
+		this.uf = uf;
+		this.cidade = cidade;
+		this.bairro = bairro;
+		this.rua = rua;
+		this.numero = numero;
+		this.complemento = complemento;
+		this.cep = cep;
+	}
+
 	public String getUf() {
 		return uf;
 	}
@@ -63,6 +78,12 @@ public class Endereco {
 
 	public void setCep(String cep) {
 		this.cep = cep;
+	}
+
+	@Override
+	public String toString() {
+		return "Endereco: " + uf + ", " + cidade + ", " + bairro + ", " + rua + ", " + numero + ", " + complemento
+				+ ", " + cep;
 	}
 
 }
