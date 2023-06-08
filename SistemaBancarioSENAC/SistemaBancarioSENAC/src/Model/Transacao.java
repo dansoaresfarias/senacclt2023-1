@@ -50,12 +50,12 @@ public class Transacao {
 
 	@Override
 	public String toString() {
-		String retorno = data  + " | " + tipo;
-		if(clienteTrans != null) {
+		String retorno = data + " | " + tipo;
+		if (clienteTrans != null) {
 			retorno += " | " + clienteTrans.getNome();
 		}
-		retorno += " | "  +  sinalValor + " R$ " + valor;
+		retorno += " | " + sinalValor + " R$ " + valor;
 		return retorno;
-	}	
+	}
 
 }

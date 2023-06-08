@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class Conta {
+public abstract class Conta {
 
 	private Cliente cliente;
 	private int numero;
@@ -19,6 +19,8 @@ public class Conta {
 	public Conta() {
 		// TODO Auto-generated constructor stub
 		super();
+		this.status = true;
+		this.transacoes = new ArrayList<Transacao>();
 	}
 
 	public Conta(Cliente cliente, int numero, Agencia ag, Date dataCriacao, double saldo, double limite) {
