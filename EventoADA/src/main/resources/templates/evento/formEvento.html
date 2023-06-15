@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css" media="screen,projection" />
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eventos Faculdade SENAC</title>
+</head>
+
+<body>
+    <th:block th:include="header"></th:block>
+    <div class="container">
+        <br>
+        <form class="container" method="post">
+            <h3 class="center">Cadastro de Evento</h3>
+            <div class="row">
+                <div class="input-field col s12">
+                    <b>Nome: </b><input class="validate" type="text" value="" name="titulo" required/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <b>Descrição: </b><input type="text" value="" name="descricao" />
+                </div>
+            </div>            
+            <div class="row">
+                <div class="input-field col s3">
+                    <b>Local: </b><input class="validate"  type="text" value="" name="local" required/>
+                </div>
+                <div class="input-field col s3">
+                    <b>Andar: </b><input class="validate" type="number" value="" name="andar" required/>
+                </div>
+                <div class="input-field col s3">
+                    <b>Data: </b><input class="validate" type="date" value="" name="data" required />
+                </div>
+                <div class="input-field col s3">
+                    <b>Horário: </b><input class="validate" type="time" value="" name="horario" required/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                    <b>Responsável: </b><input class="validate" type="text" value="" name="responsavel" required/>
+                </div>
+                <div class="input-field col s6">
+                    <b>Quantidade Máxima de Participantes: </b><input type="number" value="" name="quantidadeMax" />
+                </div>
+            </div>
+            <div class="container center">
+                <button type="submit" class="btn orange darken-3"><i
+                        class="material-icons left">event_available</i>Salvar</button>
+                <button type="reset" class="btn orange darken-3"><i
+                        class="material-icons left">event_busy</i>Cancelar</button>
+                <a href="/EventoADA" class="waves-effect waves-light btn orange darken-3">
+                    <i class="material-icons left">keyboard_arrow_left</i>Voltar
+                </a>
+            </div>
+        </form>
+    </div>
+    <th:block th:include="footer"></th:block>
+</body>
+<!-- Compiled and minified JavaScript -->
+<script src="materialize/js/materialize.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1min.js"></script>
+</html>
