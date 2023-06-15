@@ -14,20 +14,41 @@
 <body>
     <th:block th:include="header"></th:block>
     <div class="container">
-        <br>
-        <div th:each = "evento : ${eventos}">
-            <div class="row">
-                <p><span th:text="${evento.titulo}"></span></p>
-                <p><span th:text="${evento.descricao}"></span></p>
-                <p><span th:text="${evento.local}"></span></p>
-                <p><span th:text="${evento.andar}"></span></p>
-                <p><span th:text="${evento.data}"></span></p>
-                <p><span th:text="${evento.horario}"></span></p>
-                <p><span th:text="${evento.quantidadeMax}"></span></p>
-                <p><span th:text="${evento.responsavel}"></span></p>
-                <hr>
-            </div>		
-        </div>    
+        <h5>
+            <i class="material-icons left">event</i>Lista de Eventos
+        </h5>
+        <hr size=7>
+        <ul class="collection">
+            <div th:each = "evento : ${eventos}">
+                <li class="collection-item avatar">
+                    <i class="material-icons circle orange darken-3">school</i>
+                    <span class="title">
+                        <b>
+                            <a th:href="${(#mvc.url('EC#detalharEvento').arg(0, evento.idEvento)).build()}">
+                                <span th:text="${evento.titulo}"></span>
+                            </a>
+                        </b>
+                    </span>
+                    <p>
+                        <div class="row">
+                            <div class="input-field col s3">
+                                <b>Data: </b><span th:text="${evento.data}"></span>
+                            </div>
+                            <div class="input-field col s3">
+                                <b>Horário: </b><span th:text="${evento.horario}"></span>
+                            </div>
+                            <div class="input-field col s3">
+                                <b>Local: </b><span th:text="${evento.local}"></span>
+                            </div>
+                            <div class="input-field col s3">
+                                <b>Andar: </b><span th:text="${evento.andar}"></span>
+                            </div>
+                        </div>
+                    </p>
+                    <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+                  </li>
+            </div>
+        </ul>
     </div>
     <th:block th:include="footer"></th:block>
 </body>

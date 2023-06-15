@@ -5,5 +5,5 @@ import org.springframework.data.repository.CrudRepository;
 import senac.pe.EventoADA.model.Evento;
 
 public interface EventoRepository extends CrudRepository<Evento, String>{
-
+	Evento findByIdEvento(long idEvento);
 }

@@ -14,54 +14,44 @@
 <body>
     <th:block th:include="header"></th:block>
     <div class="container">
-        <br>
-        <h5>
-            <i class="material-icons left">event</i>Cadastrar do Evento
-        </h5>
-        <hr size=7>
-        <form class="container" method="post">
+        <div th:each="evento : ${evento}">
+            <h5>
+                <i class="material-icons left">event</i>Detalhes do Evento
+            </h5>
+            <hr size=7>
             <div class="row">
                 <div class="input-field col s12">
-                    <b>Nome: </b><input class="validate" type="text" value="" name="titulo" required/>
+                    <b>Nome: </b> <span th:text="${evento.titulo}"></span>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <b>Descrição: </b><input type="text" value="" name="descricao" />
+                    <b>Descrição: </b> <span th:text="${evento.descricao}"></span>
                 </div>
-            </div>            
+            </div>
             <div class="row">
                 <div class="input-field col s3">
-                    <b>Local: </b><input class="validate"  type="text" value="" name="local" required/>
+                    <b>Data: </b><span th:text="${evento.data}"></span>
                 </div>
                 <div class="input-field col s3">
-                    <b>Andar: </b><input class="validate" type="number" value="" name="andar" required/>
+                    <b>Horário: </b><span th:text="${evento.horario}"></span>
                 </div>
                 <div class="input-field col s3">
-                    <b>Data: </b><input class="validate" type="date" value="" name="data" required />
+                    <b>Local: </b><span th:text="${evento.local}"></span>
                 </div>
                 <div class="input-field col s3">
-                    <b>Horário: </b><input class="validate" type="time" value="" name="horario" required/>
+                    <b>Andar: </b><span th:text="${evento.andar}"></span>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s6">
-                    <b>Responsável: </b><input class="validate" type="text" value="" name="responsavel" required/>
+                    <b>Responsável: </b><span th:text="${evento.responsavel}"></span>
                 </div>
                 <div class="input-field col s6">
-                    <b>Quantidade Máxima de Participantes: </b><input type="number" value="" name="quantidadeMax" />
+                    <b>Quantidade Máxima de Participantes: </b><span th:text="${evento.quantidadeMax}"></span>
                 </div>
             </div>
-            <div class="container center">
-                <button type="submit" class="btn orange darken-3"><i
-                        class="material-icons left">event_available</i>Salvar</button>
-                <button type="reset" class="btn orange darken-3"><i
-                        class="material-icons left">event_busy</i>Cancelar</button>
-                <a href="/EventoADA" class="waves-effect waves-light btn orange darken-3">
-                    <i class="material-icons left">keyboard_arrow_left</i>Voltar
-                </a>
-            </div>
-        </form>
+        </div>
     </div>
     <th:block th:include="footer"></th:block>
 </body>

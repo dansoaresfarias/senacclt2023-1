@@ -24,7 +24,7 @@ public class Evento {
 	private int andar;
 	@Column(columnDefinition = "int")
 	private int quantidadeMax;
-	@Column(nullable = false, columnDefinition = "datetime")
+	@Column(nullable = false, columnDefinition = "date")
 	private String data;
 	@Column(nullable = false, length = 45)
 	private String horario;
